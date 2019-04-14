@@ -5,10 +5,16 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-istanbul": "^5.1.1",
     "karma": "^4.0.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.2",
-    "karma-jasmine": "^2.0.1"
+    "karma-jasmine": "^2.0.1",
+    "karma-webpack": "^3.0.5",
+    "webpack": "^4.30.0"
   },
   "scripts": {
     "test": "karma start"

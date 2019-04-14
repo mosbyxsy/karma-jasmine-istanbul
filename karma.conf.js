@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/**/*.js',
+      // 'src/**/*.js',
       'test/**/*.js'
     ],
 
@@ -28,7 +28,9 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.js': ['coverage']
+      // 'src/**/*.js': ['coverage']
+      // 'test/**/*.js': ['webpack', 'coverage'],
+      'test/**/*.js': ['webpack'],
     },
 
 
@@ -71,6 +73,22 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    // webpack config
+    webpack: {
+      mode: 'development',
+      module: {
+        rules: [{
+          test: /\.js$/,
+          loader: 'babel-loader',
+          exclude: /node_modules/,
+          options: {
+            presets: ['@babel/env'],
+            plugins: ['istanbul']
+          }
+        }]
+      }
+    }
   })
 }

@@ -5,3 +5,5 @@ function isNum(num) {
         return false
     }
 }
+
+exports.isNum = isNum;
