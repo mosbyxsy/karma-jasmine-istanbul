@@ -6,4 +6,4 @@ function isNum(num) {
     }
 }
 
-exports.isNum = isNum;
+export default isNum;

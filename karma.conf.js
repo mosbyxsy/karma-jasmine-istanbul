@@ -78,13 +78,16 @@ module.exports = function(config) {
     // webpack config
     webpack: {
       mode: 'development',
+      resolve: {
+        extensions: ['.js', '.jsx','.json'],
+      },
       module: {
         rules: [{
-          test: /\.js$/,
+          test: /\.jsx?$/,
           loader: 'babel-loader',
           exclude: /node_modules/,
           options: {
-            presets: ['@babel/env'],
+            presets: ['@babel/env', '@babel/react'],
             plugins: ['istanbul']
           }
         }]
